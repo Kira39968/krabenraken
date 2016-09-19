@@ -8,6 +8,6 @@ namespace Lab1
 {
     class Programm2
     {
-        
+        //new change
     }
 }
