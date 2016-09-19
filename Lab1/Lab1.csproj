@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Class2.cs" />
     <Compile Include="666.cs">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
