@@ -8,7 +8,6 @@ namespace Lab1
 {
     class Programm2
     {
-        ytguhk;
-        ghjkl;';okligvc';
+        
     }
 }
