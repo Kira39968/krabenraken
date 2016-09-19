@@ -8,6 +8,6 @@ namespace Lab1
 {
     class Programm2
     {
-        
+        екп теопр плопт ломт лом иплои мпл икплми
     }
 }
