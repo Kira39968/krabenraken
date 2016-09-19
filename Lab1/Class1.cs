@@ -8,5 +8,6 @@ namespace Lab1
 {
     class Class1
     {
+        //546546534
     }
 }
