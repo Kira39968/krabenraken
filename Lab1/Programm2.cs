@@ -8,6 +8,7 @@ namespace Lab1
 {
     class Programm2
     {
+        //рлплпдлр лр длр
         //new change
         //55555
         //ебола
