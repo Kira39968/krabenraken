@@ -10,6 +10,62 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
+            int NumberOfElements = 0;
+            Console.WriteLine("Please, enter the number of elements in one - dimensional array");
+            NumberOfElements = Convert.ToInt32(Console.ReadLine());
+
+            Paper[] ODArray = new Paper[NumberOfElements];
+            for (int i = 0; i < NumberOfElements; i++)
+                ODArray[i] = new Paper();
+
+            int NumberOfRowsInTDArray = 0;
+            int NumberOfColumnsInTDArray = 0;
+            Console.WriteLine("Please, enter the number of rows in two - dimensional array");
+            NumberOfRowsInTDArray = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please, enter the number of columns in two - dimensional array");
+            NumberOfColumnsInTDArray = Convert.ToInt32(Console.ReadLine());
+            Paper[,] TDArray = new Paper[NumberOfRowsInTDArray,NumberOfColumnsInTDArray];
+
+            for (int i = 0; i < NumberOfRowsInTDArray; i++)
+                for (int j = 0; j < NumberOfColumnsInTDArray; j++)
+                    TDArray[i,j] = new Paper();
+
+            int NumberOfColumnsInRaggedArray = 0;
+            int NumberOfRowsInRaggedArray = 0;
+            Console.WriteLine("Please, enter the number of rows in ragged array");
+            NumberOfRowsInRaggedArray = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Please, enter the number of columns in ragged array");
+            NumberOfColumnsInRaggedArray = Convert.ToInt32(Console.ReadLine());
+            Paper[][] RaggedArray = new Paper[NumberOfRowsInRaggedArray][];
+            for (int i = 0; i < NumberOfRowsInRaggedArray; i++)               
+                    RaggedArray[i] = new Paper[NumberOfColumnsInRaggedArray];
+
+            for (int i = 0; i < NumberOfRowsInRaggedArray; i++)
+                for (int j = 0; j < NumberOfColumnsInRaggedArray; j++)
+                    RaggedArray[i][j] = new Paper();
+
+            int start = Environment.TickCount;
+            for (int i = 0; i < NumberOfElements; i++)
+                ODArray[i].Name = "qwe";
+            int end = Environment.TickCount - start;
+            Console.WriteLine("First result is: " + end);
+
+            start = Environment.TickCount;
+            for (int i = 0; i < NumberOfRowsInTDArray; i++)
+                for (int j = 0; j < NumberOfColumnsInTDArray; j++)
+                    TDArray[i, j].Name = "qwe";
+            end = Environment.TickCount - start;
+            Console.WriteLine("Second result is: " + end);
+
+            start = Environment.TickCount;
+            for (int i = 0; i < NumberOfRowsInRaggedArray; i++)
+                for (int j = 0; j < NumberOfColumnsInRaggedArray; j++)
+                    RaggedArray[i][j].Name = "qwe";
+            end = Environment.TickCount - start;
+            Console.WriteLine("Third result is: " + end);
+
+
+            /*
             ResearchTeam DyatlovTeam = new ResearchTeam("Pereval", "Dyatlov Team", 6845312, TimeFrame.Year);
             Console.WriteLine(DyatlovTeam.ToShortString());
 
@@ -25,7 +81,7 @@ namespace Lab1
             DyatlovTeam.AddPapers(p1, p2);
             Console.WriteLine(DyatlovTeam.ToShortString());
 
-            
+            */
 
             Console.ReadKey();
         }
