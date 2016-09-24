@@ -10,6 +10,7 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
+            //85
             int NumberOfElements = 0;
             Console.WriteLine("Please, enter the number of elements in one - dimensional array");
             NumberOfElements = Convert.ToInt32(Console.ReadLine());
