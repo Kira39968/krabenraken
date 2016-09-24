@@ -9,5 +9,6 @@ namespace Lab1
     enum TimeFrame
     {
         Year, TwoYears, Long
+            //123
     }
 }
