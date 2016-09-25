@@ -80,7 +80,7 @@ namespace Lab2
 
         public override int GetHashCode()
         {
-            return name.Length * 1488 + regNumber;
+            return name.Length * 1488 + RegisterCode;
         }
     }
 }
