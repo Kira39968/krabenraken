@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    class Paper
+    class Paper : INameAndCopy
     {
         public string Name { get; set; }
         public Person Author { get; set; }
@@ -14,21 +14,32 @@ namespace Lab2
 
         public Paper(string name, Person author, DateTime dateOfPublication)
         {
-            this.Name = name;
-            this.Author = author;
-            this.DateOfPublication = dateOfPublication;
+            Name = name;
+            Author = author;
+            DateOfPublication = dateOfPublication;
         }
 
         public Paper()
         {
-            this.Name = "";
-            this.Author = new Person("unnamed", "unnamed", new DateTime(1900, 01, 01));
-            this.DateOfPublication = new DateTime(1900, 01, 01);
+            Name = "";
+            Author = new Person("unnamed", "unnamed", new DateTime(1900, 01, 01));
+            DateOfPublication = new DateTime(1900, 01, 01);
+        }
+
+        public virtual object DeepCopy()
+        {
+            Paper temp = new Paper();
+
+            temp.Author = Author;
+            temp.DateOfPublication = DateOfPublication;
+            temp.Name = Name;
+
+            return temp;
         }
 
         public override string ToString()
         {
-            return String.Format("Name of article {0}, Autor {1}, Date of publication {2}", Name, Author, DateOfPublication);
+            return string.Format("Name of article {0}, Autor {1}, Date of publication {2}", Name, Author, DateOfPublication);
         }
     }
 }

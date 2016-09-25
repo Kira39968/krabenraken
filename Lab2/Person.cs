@@ -80,6 +80,17 @@ namespace Lab2
             return p1.Equals(p2) ? false : true;
         }
 
+        public virtual object DeepCopy()
+        {
+            Person temp = new Person();
+
+            temp.Name = Name;
+            temp.SurName = SurName;
+            temp.YearOfBirth = YearOfBirth;
+
+            return temp;
+        }
+
         public override int GetHashCode()
         {
             return (birth.Month * birth.Day + birth.Year) + 1024 * 1488 + 228 * (name.Length * sName.Length);

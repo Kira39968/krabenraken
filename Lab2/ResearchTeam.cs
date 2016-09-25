@@ -12,7 +12,7 @@ namespace Lab2
         private string researchTheme;
         private ArrayList researchPublications = new ArrayList();
         private ArrayList researchTeamMembers= new ArrayList();
-        private int researchRegisterCode;
+        
         private TimeFrame researchDuration;
         
 
@@ -53,6 +53,28 @@ namespace Lab2
         {
             foreach (Person person in members)
                 researchTeamMembers.Add(person);
+        }
+
+        public override object DeepCopy()
+        {
+            ResearchTeam temp = new ResearchTeam();
+
+            temp.Name = name;
+            temp.RegNumber = researchRegisterCode;
+            temp.ResearchTheme = researchTheme;
+            temp.ResearchDuration = researchDuration;
+
+            ArrayList members = new ArrayList();
+            foreach (Person p in ResearchTeamMembers)
+                members.Add(p.DeepCopy());
+            temp.ResearchTeamMembers = members;
+
+            ArrayList puplications = new ArrayList();
+            foreach (Paper paper in ResearchPublications)
+                puplications.Add(paper.DeepCopy());
+            temp.ResearchPublications = puplications;
+
+            return temp;
         }
 
         public override string ToString()
