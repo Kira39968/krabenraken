@@ -16,8 +16,9 @@ namespace Lab2
         private TimeFrame researchDuration;
         
 
-        public ResearchTeam(string ResearchTheme, ArrayList ResearchPublications, int ResearchRegisterCode, TimeFrame ResearchDuration)
+        public ResearchTeam(string Name, string ResearchTheme, ArrayList ResearchPublications, int ResearchRegisterCode, TimeFrame ResearchDuration)
         {
+            this.Name = Name;
             researchTheme = ResearchTheme;
             researchPublications = ResearchPublications;
             researchRegisterCode = ResearchRegisterCode;
@@ -56,14 +57,14 @@ namespace Lab2
 
         public override string ToString()
         {
-            return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3};\n Research publications {4}",
-                researchTeamMembers, ResearchTheme, ResearchRegisterCode, ResearchDuration, ResearchPublications);
+            return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3};\n Research publications {4}; \n Team members {5}",
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ResearchPublications, researchTeamMembers);
         }
 
         public virtual string ToShortString()
         {
             return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3}",
-                researchTeamMembers, ResearchTheme, ResearchRegisterCode, ResearchDuration);
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration);
         }
     }
 }
