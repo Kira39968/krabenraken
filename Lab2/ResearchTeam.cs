@@ -91,7 +91,7 @@ namespace Lab2
 
         public override int GetHashCode()
         {
-            return researchTheme.Length * researchRegisterCode * 1488;
+            return Theme.Length * RegisterCode * 1488;
         }
     }
 }
