@@ -82,8 +82,7 @@ namespace Lab2
 
         public override int GetHashCode()
         {
-            Random r = new Random();
-            return (birth.Month * birth.Day + birth.Year) + 1024 * 1488 + 228 * (name.Length * sName.Length * r.Next(10,20));
+            return (birth.Month * birth.Day + birth.Year) + 1024 * 1488 + 228 * (name.Length * sName.Length);
         }
 
     }
