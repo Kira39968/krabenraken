@@ -10,7 +10,6 @@ namespace Lab1
     {
         static void Main(string[] args)
         {
-            //85
             int NumberOfElements = 0;
             Console.WriteLine("Please, enter the number of elements in one - dimensional array");
             NumberOfElements = Convert.ToInt32(Console.ReadLine());
@@ -19,24 +18,22 @@ namespace Lab1
             for (int i = 0; i < NumberOfElements; i++)
                 ODArray[i] = new Paper();
 
-            int NumberOfRowsInTDArray = 0;
-            int NumberOfColumnsInTDArray = 0;
-            Console.WriteLine("Please, enter the number of rows in two - dimensional array");
-            NumberOfRowsInTDArray = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please, enter the number of columns in two - dimensional array");
-            NumberOfColumnsInTDArray = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("Please, enter rows and columns of two - dimensional array, using ',': ");
+            string[] RowsAndColumnsTDArr = Console.ReadLine().Split(',');
+            int NumberOfRowsInTDArray = int.Parse(RowsAndColumnsTDArr[0]);
+            int NumberOfColumnsInTDArray = int.Parse(RowsAndColumnsTDArr[1]);
             Paper[,] TDArray = new Paper[NumberOfRowsInTDArray,NumberOfColumnsInTDArray];
 
             for (int i = 0; i < NumberOfRowsInTDArray; i++)
                 for (int j = 0; j < NumberOfColumnsInTDArray; j++)
                     TDArray[i,j] = new Paper();
 
-            int NumberOfColumnsInRaggedArray = 0;
-            int NumberOfRowsInRaggedArray = 0;
-            Console.WriteLine("Please, enter the number of rows in ragged array");
-            NumberOfRowsInRaggedArray = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Please, enter the number of columns in ragged array");
-            NumberOfColumnsInRaggedArray = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("Please, enter rows and columns of two - dimensional array, using ',': ");
+            string[] RowsAndColumnsRaggedArr = Console.ReadLine().Split(',');
+            int NumberOfColumnsInRaggedArray = int.Parse(RowsAndColumnsRaggedArr[0]);
+            int NumberOfRowsInRaggedArray = int.Parse(RowsAndColumnsRaggedArr[1]);
             Paper[][] RaggedArray = new Paper[NumberOfRowsInRaggedArray][];
             for (int i = 0; i < NumberOfRowsInRaggedArray; i++)               
                     RaggedArray[i] = new Paper[NumberOfColumnsInRaggedArray];
