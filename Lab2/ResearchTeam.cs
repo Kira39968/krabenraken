@@ -70,5 +70,22 @@ namespace Lab2
         {
             return researchTheme.Length * researchRegisterCode * 1488;
         }
+
+
+        public IEnumerator<int> GetPapers(int LastNYears)
+        { 
+            int count = 0;
+            for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
+			{
+                foreach (Paper item in researchPublications)
+	            {
+	            	 if(item.DateOfPublication.Year==i)
+                         count++;
+	            }
+			}
+            yield return count;
+        }
+
+
     }
 }
