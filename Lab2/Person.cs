@@ -81,5 +81,11 @@ namespace Lab2
             return p1.Equals(p2) ? false : true;
         }
 
+        public override int GetHashCode()
+        {
+            Random r = new Random();
+            return (birth.Month * birth.Day + birth.Year) + 1024 * 1488 + 228 * (name.Length * sName.Length * r.Next(10,20));
+        }
+
     }
 }
