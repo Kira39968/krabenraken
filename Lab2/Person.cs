@@ -70,7 +70,16 @@ namespace Lab2
                 ? true : false;
         }
 
+        public static bool operator ==(Person p1, Person p2)
+        {
+            return p1.Equals(p2) ? true : false;
+        }
 
+        
+        public static bool operator !=(Person p1, Person p2)
+        {
+            return p1.Equals(p2) ? false : true;
+        }
 
     }
 }
