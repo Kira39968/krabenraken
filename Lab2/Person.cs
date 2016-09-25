@@ -61,7 +61,12 @@ namespace Lab2
             return "Name: " + this.name + ". Surname: " + this.sName;
         }
 
-        
+        /*public override bool Equals(object obj)
+        {
+           // return 
+        }*/
+
+
 
     }
 }
