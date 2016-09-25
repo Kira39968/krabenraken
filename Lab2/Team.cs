@@ -30,16 +30,12 @@ namespace Lab2
         {
             get { return RegisterCode; }
             set
-            {
-                try
-                {
-                    if (value <= 0) throw new ArgumentOutOfRangeException("Номер не подходит!");
+            {               
+                 if (value <= 0)
+                    throw new ArgumentOutOfRangeException("Номер не подходит!");
+                else
                     RegisterCode = value;
-                }
-                catch (ArgumentOutOfRangeException)
-                {
-                    throw;
-                }
+               
             }
         }
 

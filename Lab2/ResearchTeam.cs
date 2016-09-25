@@ -26,8 +26,8 @@ namespace Lab2
 
         public ResearchTeam()
         {
-            Theme = "new Theme";
-            RegisterCode = 0000000;
+            Theme = "shakaly";
+            RegisterCode = 58001;
             Duration = TimeFrame.Long;
         }
 
@@ -76,10 +76,18 @@ namespace Lab2
             return temp;
         }
 
+        public string ArrayListToString(ArrayList al)
+        {
+            string temp = "";
+            foreach (var element in al)
+                temp +=  element.ToString();
+            return temp;
+        }
+
         public override string ToString()
         {
-            return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3};\n Research publications {4}; \n Team members {5}",
-                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ResearchPublications, TeamMembers);
+            return string.Format(" Research group: {0};\n Theme of reserch: {1};\n Group`s Register code: {2};\n Research duration: {3};\n Research publications: {4}; \n\r\r\r Team members: {5}",
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ArrayListToString(ResearchPublications), ArrayListToString(TeamMembers));
         }
 
         public virtual string ToShortString()

@@ -21,8 +21,8 @@ namespace Lab2
 
         public Paper()
         {
-            Name = "";
-            Author = new Person("unnamed", "unnamed", new DateTime(1900, 01, 01));
+            Name = "KakoiTo";
+            Author = new Person("Slash", "Nexz", new DateTime(1900, 01, 01));
             DateOfPublication = new DateTime(1900, 01, 01);
         }
 
@@ -39,7 +39,7 @@ namespace Lab2
 
         public override string ToString()
         {
-            return string.Format("Name of article {0}, Autor {1}, Date of publication {2}", Name, Author, DateOfPublication);
+            return string.Format("\nName of article {0}, \nAutor {1}, \nDate of publication {2}", Name, Author, DateOfPublication);
         }
     }
 }

@@ -14,10 +14,10 @@ namespace Lab2
 
         public Person()
         {
-            DateTime _dt = new DateTime(0000,01,01);
-            this.name = "unnamed";
-            this.sName = "unnamed";
-            this.birth = _dt;
+            DateTime _dt = new DateTime(1999,01,01);
+            name = "Dasha";
+            sName = "Kovtun";
+            birth = _dt;
         }
 
         public Person(string name, string sName, DateTime birth)
@@ -53,7 +53,7 @@ namespace Lab2
 
         public override string ToString()
         {
-            return "Name: " + this.name + ". Surname: " + this.sName + ". Date of Birth: " + this.birth;
+            return "\nName: " + this.name + ".\n Surname: " + this.sName + ".\n Date of Birth: " + this.birth;
         }
 
         public virtual string ToShortString()
