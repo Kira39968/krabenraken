@@ -77,5 +77,10 @@ namespace Lab2
         {
             return "Name: " + name + ". Regisration number: " + RegisterCode;
         }
+
+        public override int GetHashCode()
+        {
+            return name.Length * 1488 + regNumber;
+        }
     }
 }
