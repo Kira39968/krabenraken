@@ -65,5 +65,10 @@ namespace Lab2
             return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3}",
                 researchTeamMembers, ResearchTheme, ResearchRegisterCode, ResearchDuration);
         }
+
+        public override int GetHashCode()
+        {
+            return researchTheme.Length * researchRegisterCode * 1488;
+        }
     }
 }
