@@ -12,8 +12,7 @@ namespace Lab2
         private string Theme;
         private ArrayList Publications = new ArrayList();
         private ArrayList TeamMembers= new ArrayList();
-        
-        private TimeFrame researchDuration;
+        private TimeFrame Duration;
         
 
         public ResearchTeam(string Name, string Theme, ArrayList Publications, int RegisterCode, TimeFrame ResearchDuration)
@@ -22,25 +21,25 @@ namespace Lab2
             this.Theme = Theme;
             this.Publications = Publications;
             this.RegisterCode = RegisterCode;
-            researchDuration = ResearchDuration;
+            Duration = ResearchDuration;
         }
 
         public ResearchTeam()
         {
             Theme = "new Theme";
             RegisterCode = 0000000;
-            researchDuration = TimeFrame.Long;
+            Duration = TimeFrame.Long;
         }
 
         public string ResearchTheme { get { return Theme; } set { Theme = value; } }
         public ArrayList ResearchPublications { get { return Publications; } set { Publications = value; } }
         public int ResearchRegisterCode { get { return RegisterCode; } set { RegisterCode = value; } }
-        public TimeFrame ResearchDuration { get { return researchDuration; } set { researchDuration = value; } }
+        public TimeFrame ResearchDuration { get { return Duration; } set { Duration = value; } }
         public ArrayList ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
 
         public bool this[TimeFrame time]
         {
-            get { return time == researchDuration ? true : false; }
+            get { return time == Duration ? true : false; }
         }
 
         public void AddPapers ( params Paper[] papers)
@@ -62,7 +61,7 @@ namespace Lab2
             temp.Name = name;
             temp.RegNumber = RegisterCode;
             temp.ResearchTheme = Theme;
-            temp.ResearchDuration = researchDuration;
+            temp.ResearchDuration = Duration;
 
             ArrayList members = new ArrayList();
             foreach (Person p in ResearchTeamMembers)
@@ -100,7 +99,7 @@ namespace Lab2
             int count = 0;
             for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
 			{
-                foreach (Paper item in researchPublications)
+                foreach (Paper item in Publications)
 	            {
 	            	 if(item.DateOfPublication.Year==i)
                          count++;
