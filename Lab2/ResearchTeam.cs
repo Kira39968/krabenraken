@@ -100,7 +100,7 @@ namespace Lab2
             int count = 0;
             for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
 			{
-                foreach (Paper item in researchPublications)
+                foreach (Paper item in Publications)
 	            {
 	            	 if(item.DateOfPublication.Year==i)
                          count++;

@@ -10,6 +10,12 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
+            Team FirstTeam = new Team();
+            Team SecTeam = new Team();
+
+            Console.WriteLine("Если, внезапно, ссылки на объекты равны, вот тут " + FirstTeam == SecTeam + " будет тру:) ");
+
+
 
 
             Console.ReadKey();
