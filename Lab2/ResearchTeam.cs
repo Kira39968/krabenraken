@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab2
 {
-    class ResearchTeam : Team
+    class ResearchTeam : Team, INameAndCopy
     {
         private string researchTheme;
         private ArrayList researchPublications = new ArrayList();
@@ -39,13 +39,19 @@ namespace Lab2
 
         public bool this[TimeFrame time]
         {
-            get { return time == this.researchDuration ? true : false; }
+            get { return time == researchDuration ? true : false; }
         }
 
         public void AddPapers ( params Paper[] papers)
         {
             foreach (Paper paper in papers)
                 researchPublications.Add(paper);
+        }
+
+        public void AddMembers(params Person[] members)
+        {
+            foreach (Person person in members)
+                researchTeamMembers.Add(person);
         }
 
         public override string ToString()
