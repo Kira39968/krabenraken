@@ -29,8 +29,8 @@ namespace Lab1
                 for (int j = 0; j < NumberOfColumnsInTDArray; j++)
                     TDArray[i,j] = new Paper();
 
-            
-            Console.WriteLine("Please, enter rows and columns of two - dimensional array, using ',': ");
+
+            Console.WriteLine("Please, enter rows and columns of ragged array, using ',': ");
             string[] RowsAndColumnsRaggedArr = Console.ReadLine().Split(',');
             int NumberOfColumnsInRaggedArray = int.Parse(RowsAndColumnsRaggedArr[0]);
             int NumberOfRowsInRaggedArray = int.Parse(RowsAndColumnsRaggedArr[1]);
