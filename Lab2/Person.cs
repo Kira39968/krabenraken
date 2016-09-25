@@ -64,7 +64,10 @@ namespace Lab2
         public override bool Equals(object obj)
         {
             Person person = (Person)obj;
-            return name.Equals(person.name) && sName.Equals(person.sName) && birth.Equals(person.birth) ? true : false;
+            return name.Equals(person.name) 
+                && sName.Equals(person.sName) 
+                && birth.Equals(person.birth) 
+                ? true : false;
         }
 
 
