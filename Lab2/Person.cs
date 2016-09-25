@@ -61,12 +61,25 @@ namespace Lab2
             return "Name: " + this.name + ". Surname: " + this.sName;
         }
 
-        /*public override bool Equals(object obj)
+        public override bool Equals(object obj)
         {
-           // return 
-        }*/
+            Person person = (Person)obj;
+            return name.Equals(person.name) 
+                && sName.Equals(person.sName) 
+                && birth.Equals(person.birth) 
+                ? true : false;
+        }
 
+        public static bool operator ==(Person p1, Person p2)
+        {
+            return p1.Equals(p2) ? true : false;
+        }
 
+        
+        public static bool operator !=(Person p1, Person p2)
+        {
+            return p1.Equals(p2) ? false : true;
+        }
 
     }
 }
