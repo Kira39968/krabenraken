@@ -10,12 +10,14 @@ namespace Lab2
     {
         static void Main(string[] args)
         {
-            Team FirstTeam = new Team();
-            Team SecTeam = new Team();
+            Team ф = new Team();
+            Team и = new Team();
 
-            Console.WriteLine("Если, внезапно, ссылки на объекты равны, вот тут " + FirstTeam == SecTeam + " будет тру:) ");
+            Console.WriteLine("Если, внезапно, ссылки на объекты равны, то вот тут >>" 
+                + ReferenceEquals(ф, и) + "<< будет тру:) ");
 
-
+            Console.WriteLine("Если, внезапно, объекты не равны, то вот тут >>"
+                + ф.Equals(и) + "<< будет фолс:) ");
 
 
             Console.ReadKey();
