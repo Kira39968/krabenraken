@@ -9,18 +9,18 @@ namespace Lab2
     class Team : INameAndCopy
     {
         protected string name;
-        protected int regNumber;
+        protected int RegisterCode;
 
         public Team(string _name, int _regNumber)
         {
             name = _name;
-            regNumber = _regNumber;
+            RegisterCode = _regNumber;
         }
 
         public Team()
         {
             name = "NoName";
-            regNumber = 8800555;
+            RegisterCode = 8800555;
         }
 
         public string Name { get; set; }
@@ -28,13 +28,13 @@ namespace Lab2
 
         public int RegNumber
         {
-            get { return regNumber; }
+            get { return RegisterCode; }
             set
             {
                 try
                 {
                     if (value <= 0) throw new ArgumentOutOfRangeException("Номер не подходит!");
-                    regNumber = value;
+                    RegisterCode = value;
                 }
                 catch (ArgumentOutOfRangeException)
                 {
@@ -48,7 +48,7 @@ namespace Lab2
             Team temp = new Team();
 
             temp.name = name;
-            temp.regNumber = regNumber;
+            temp.RegisterCode = RegisterCode;
 
             return temp;
         }
@@ -57,7 +57,7 @@ namespace Lab2
         {
             Team team = (Team)obj;
             return name.Equals(team.name)
-                && regNumber.Equals(team.regNumber)
+                && RegisterCode.Equals(team.RegisterCode)
                 ? true : false;
         }
 
@@ -75,7 +75,7 @@ namespace Lab2
 
         public override string ToString()
         {
-            return "Name: " + name + ". Regisration number: " + regNumber;
+            return "Name: " + name + ". Regisration number: " + RegisterCode;
         }
 
         public override int GetHashCode()

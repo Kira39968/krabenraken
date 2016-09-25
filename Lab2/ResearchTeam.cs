@@ -9,33 +9,34 @@ namespace Lab2
 {
     class ResearchTeam : Team, INameAndCopy
     {
-        private string researchTheme;
-        private ArrayList researchPublications = new ArrayList();
-        private ArrayList researchTeamMembers= new ArrayList();
-        private int researchRegisterCode;
+        private string Theme;
+        private ArrayList Publications = new ArrayList();
+        private ArrayList TeamMembers= new ArrayList();
+        
         private TimeFrame researchDuration;
         
 
-        public ResearchTeam(string ResearchTheme, ArrayList ResearchPublications, int ResearchRegisterCode, TimeFrame ResearchDuration)
+        public ResearchTeam(string Name, string Theme, ArrayList Publications, int RegisterCode, TimeFrame ResearchDuration)
         {
-            researchTheme = ResearchTheme;
-            researchPublications = ResearchPublications;
-            researchRegisterCode = ResearchRegisterCode;
+            this.Name = Name;
+            this.Theme = Theme;
+            this.Publications = Publications;
+            this.RegisterCode = RegisterCode;
             researchDuration = ResearchDuration;
         }
 
         public ResearchTeam()
         {
-            researchTheme = "new Theme";
-            researchRegisterCode = 0000000;
+            Theme = "new Theme";
+            RegisterCode = 0000000;
             researchDuration = TimeFrame.Long;
         }
 
-        public string ResearchTheme { get { return researchTheme; } set { researchTheme = value; } }
-        public ArrayList ResearchPublications { get { return researchPublications; } set { researchPublications = value; } }
-        public int ResearchRegisterCode { get { return researchRegisterCode; } set { researchRegisterCode = value; } }
+        public string ResearchTheme { get { return Theme; } set { Theme = value; } }
+        public ArrayList ResearchPublications { get { return Publications; } set { Publications = value; } }
+        public int ResearchRegisterCode { get { return RegisterCode; } set { RegisterCode = value; } }
         public TimeFrame ResearchDuration { get { return researchDuration; } set { researchDuration = value; } }
-        public ArrayList ResearchTeamMembers { get { return researchTeamMembers; } set { researchTeamMembers = value; } }
+        public ArrayList ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
 
         public bool this[TimeFrame time]
         {
@@ -45,30 +46,52 @@ namespace Lab2
         public void AddPapers ( params Paper[] papers)
         {
             foreach (Paper paper in papers)
-                researchPublications.Add(paper);
+                Publications.Add(paper);
         }
 
         public void AddMembers(params Person[] members)
         {
             foreach (Person person in members)
-                researchTeamMembers.Add(person);
+                TeamMembers.Add(person);
+        }
+
+        public override object DeepCopy()
+        {
+            ResearchTeam temp = new ResearchTeam();
+
+            temp.Name = name;
+            temp.RegNumber = RegisterCode;
+            temp.ResearchTheme = Theme;
+            temp.ResearchDuration = researchDuration;
+
+            ArrayList members = new ArrayList();
+            foreach (Person p in ResearchTeamMembers)
+                members.Add(p.DeepCopy());
+            temp.ResearchTeamMembers = members;
+
+            ArrayList puplications = new ArrayList();
+            foreach (Paper paper in ResearchPublications)
+                puplications.Add(paper.DeepCopy());
+            temp.ResearchPublications = puplications;
+
+            return temp;
         }
 
         public override string ToString()
         {
-            return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3};\n Research publications {4}",
-                researchTeamMembers, ResearchTheme, ResearchRegisterCode, ResearchDuration, ResearchPublications);
+            return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3};\n Research publications {4}; \n Team members {5}",
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ResearchPublications, TeamMembers);
         }
 
         public virtual string ToShortString()
         {
             return string.Format(" Research group {0};\n Theme of reserch {1};\n Group`s Register code {2};\n Research duration {3}",
-                researchTeamMembers, ResearchTheme, ResearchRegisterCode, ResearchDuration);
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration);
         }
 
         public override int GetHashCode()
         {
-            return researchTheme.Length * researchRegisterCode * 1488;
+            return Theme.Length * RegisterCode * 1488;
         }
 
 
