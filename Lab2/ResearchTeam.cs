@@ -26,6 +26,7 @@ namespace Lab2
 
         public ResearchTeam()
         {
+            Name = "Ima";
             Theme = "shakaly";
             RegisterCode = 58001;
             Duration = TimeFrame.Long;
@@ -58,10 +59,10 @@ namespace Lab2
         {
             ResearchTeam temp = new ResearchTeam();
 
-            temp.Name = name;
-            temp.RegNumber = RegisterCode;
-            temp.ResearchTheme = Theme;
-            temp.ResearchDuration = Duration;
+            temp.Name = Name;
+            temp.RegNumber = RegNumber;
+            temp.ResearchTheme = ResearchTheme;
+            temp.ResearchDuration = ResearchDuration;
 
             ArrayList members = new ArrayList();
             foreach (Person p in ResearchTeamMembers)
@@ -102,18 +103,17 @@ namespace Lab2
         }
 
 
-        public IEnumerator GetPapers(int LastNYears)
+        public IEnumerable GetPapers(int LastNYears)
         { 
-            int count = 0;
             for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
 			{
                 foreach (Paper item in Publications)
 	            {
-	            	 if(item.DateOfPublication.Year==i)
-                         count++;
+                    if (item.DateOfPublication.Year == i)
+                        yield return item;
 	            }
 			}
-            yield return count.ToString();
+            yield return count;
         }
 
 

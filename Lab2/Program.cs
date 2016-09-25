@@ -43,10 +43,15 @@ namespace Lab2
             c.AddMembers(new Person("qqq", "Shape", DateTime.Now));
 
             Console.WriteLine("Base RT: " + c.ToString() + "\n\n\n");
-            Console.WriteLine("Copy RT: " + cpTeam.ToString());
+            Console.WriteLine("Copy RT: " + cpTeam.ToString() + "\n\n\n");
 
-            Console.WriteLine();
-            Console.WriteLine(c.GetPapers(2));
+            c.AddPapers(new Paper("rrrrrr", person, DateTime.Now));
+
+            foreach (Paper t in c.GetPapers(2))
+            {
+                Console.WriteLine(t.ToString() + "\n");
+            }
+
            
 
 
