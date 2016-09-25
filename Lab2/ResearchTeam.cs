@@ -113,7 +113,6 @@ namespace Lab2
                         yield return item;
 	            }
 			}
-            
         }
 
 
