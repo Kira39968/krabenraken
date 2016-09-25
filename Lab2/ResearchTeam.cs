@@ -103,7 +103,7 @@ namespace Lab2
         }
 
 
-        public IEnumerator GetPapers(int LastNYears)
+        public IEnumerable GetPapers(int LastNYears)
         { 
             for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
 			{
@@ -114,7 +114,6 @@ namespace Lab2
 	            }
 			}
         }
-
 
     }
 }
