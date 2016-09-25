@@ -45,8 +45,8 @@ namespace Lab2
             Console.WriteLine("Base RT: " + c.ToString() + "\n\n\n");
             Console.WriteLine("Copy RT: " + cpTeam.ToString());
 
-
-
+            Console.WriteLine();
+            Console.WriteLine(c.GetPapers(2));
            
 
 

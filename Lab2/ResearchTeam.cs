@@ -102,7 +102,7 @@ namespace Lab2
         }
 
 
-        public IEnumerator<int> GetPapers(int LastNYears)
+        public IEnumerator GetPapers(int LastNYears)
         { 
             int count = 0;
             for (int i = DateTime.Now.Year; i > DateTime.Now.Year - LastNYears; i--)
@@ -113,7 +113,7 @@ namespace Lab2
                          count++;
 	            }
 			}
-            yield return count;
+            yield return count.ToString();
         }
 
 
