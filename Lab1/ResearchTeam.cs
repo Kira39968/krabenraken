@@ -16,18 +16,18 @@ namespace Lab1
 
         public ResearchTeam(string ResearchTheme, string ResearchTeam, int ResearchRegisterCode, TimeFrame ResearchDuration)
         {
-            this.researchTheme = ResearchTheme;
-            this.researchTeam = ResearchTeam;
-            this.researchRegisterCode = ResearchRegisterCode;
-            this.researchDuration = ResearchDuration;
+            researchTheme = ResearchTheme;
+            researchTeam = ResearchTeam;
+            researchRegisterCode = ResearchRegisterCode;
+            researchDuration = ResearchDuration;
         }
 
         public ResearchTeam()
         {
-            this.researchTheme = "new Theme";
-            this.researchTeam = "new Team";
-            this.researchRegisterCode = 0000000;
-            this.researchDuration = TimeFrame.Long;
+            researchTheme = "new Theme";
+            researchTeam = "new Team";
+            researchRegisterCode = 0000000;
+            researchDuration = TimeFrame.Long;
         }
 
         public string ResearchTheme { get { return this.researchTheme; } set { this.researchTheme = value; } }

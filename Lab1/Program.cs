@@ -62,8 +62,8 @@ namespace Lab1
             end = Environment.TickCount - start;
             Console.WriteLine("Third result is: " + end);
 
-
-            /*
+            Console.WriteLine("\n-----------------------------------------------------\n");
+            
             ResearchTeam DyatlovTeam = new ResearchTeam("Pereval", "Dyatlov Team", 6845312, TimeFrame.Year);
             Console.WriteLine(DyatlovTeam.ToShortString());
 
@@ -79,7 +79,7 @@ namespace Lab1
             DyatlovTeam.AddPapers(p1, p2);
             Console.WriteLine(DyatlovTeam.ToShortString());
 
-            */
+            
 
             Console.ReadKey();
         }
