@@ -39,8 +39,8 @@
     <Compile Include="ResearchTeam.cs" />
     <Compile Include="Team.cs" />
     <Compile Include="TimeFrame.cs" />
-    <Compile Include="TestCollections.cs" />
     <Compile Include="TeamComparer.cs" />
+    <Compile Include="ResearchTeamCollection.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
 </Project>

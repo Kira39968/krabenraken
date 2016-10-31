@@ -7,15 +7,18 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    class ResearchTeam : Team, INameAndCopy
+	class ResearchTeam : Team, INameAndCopy, IComparer
     {
         private string Theme;
-        private ArrayList Publications = new ArrayList();
-        private ArrayList TeamMembers= new ArrayList();
-        private TimeFrame Duration;
+        /*private ArrayList Publications = new ArrayList();
+        private ArrayList TeamMembers= new ArrayList();*/
+
+		List<Person> TeamMembers = new List<Person> (); 
+		List<Paper> Publications = new List<Paper> (); 
+		private TimeFrame Duration;
 
 
-        public ResearchTeam(string Name, string Theme, ArrayList Publications, int RegisterCode, TimeFrame ResearchDuration)
+		public ResearchTeam(string Name, string Theme, List<Paper> Publications, int RegisterCode, TimeFrame ResearchDuration)
         {
             this.Name = Name;
             this.Theme = Theme;
@@ -33,10 +36,10 @@ namespace Lab3
         }
 
         public string ResearchTheme { get { return Theme; } set { Theme = value; } }
-        public ArrayList ResearchPublications { get { return Publications; } set { Publications = value; } }
+        public List<ResearchTeam> ResearchPublications { get { return Publications; } set { Publications = value; } }
         public int ResearchRegisterCode { get { return RegisterCode; } set { RegisterCode = value; } }
         public TimeFrame ResearchDuration { get { return Duration; } set { Duration = value; } }
-        public ArrayList ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
+		public List<ResearchTeam> ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
 
         public bool this[TimeFrame time]
         {
@@ -114,6 +117,15 @@ namespace Lab3
 	            }
 			}
         }
+
+		public int Compare(ResearchTeam x, ResearchTeam y)
+		{
+			if (x.Theme < y.Theme)
+					return 1;
+			if (x.Theme > y.Theme)
+					return -1;
+				else return 0;
+		}
 
     }
 }

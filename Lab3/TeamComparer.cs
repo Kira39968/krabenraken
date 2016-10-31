@@ -1,11 +1,16 @@
 ﻿using System;
-
+using System.Collections.Generic;
 namespace Lab3
 {
-	public class TeamComparer
+	public static class TeamComparer: IComparer<ResearchTeam>
 	{
-		public TeamComparer ()
+		public int Compare(ResearchTeam x, ResearchTeam y)
 		{
+			if (x.ResearchPublications.Count< y.ResearchPublications.Count)
+				return 1;
+			if (x.ResearchPublications.Count > y.ResearchPublications.Count)
+				return -1;
+			else return 0;
 		}
 	}
 }
