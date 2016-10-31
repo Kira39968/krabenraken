@@ -52,8 +52,7 @@ namespace Lab3
         public override bool Equals(object obj)
         {
             Team team = (Team)obj;
-            return name.Equals(team.name)
-                && RegisterCode.Equals(team.RegisterCode)
+            return name.Equals(team.name)&& RegisterCode.Equals(team.RegisterCode)
                 ? true : false;
         }
 
@@ -79,14 +78,10 @@ namespace Lab3
             return name.Length * 1488 + RegisterCode;
         }
 
-		public int CompareTo(object obj) {
-			if (obj == null) return 1;
-
+		public int CompareTo(object obj) 
+		{
 			Team otherTeam = obj as Team;
-			if (otherTeam != null) 
-				return this.RegNumber.CompareTo(otherTeam.RegNumber);
-			else
-				throw new ArgumentException("Object is not a Team");
+			return this.RegNumber.CompareTo(otherTeam.RegNumber);
 		}
     }
 }

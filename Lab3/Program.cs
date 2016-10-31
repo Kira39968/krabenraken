@@ -55,8 +55,11 @@ namespace Lab3
            
 			ResearchTeamCollection q = new ResearchTeamCollection ();
 			q.AddDefaults ();
-			Console.WriteLine (q.ToString ());
 
+			string output = "";
+			foreach (ResearchTeam team in q.SortedByTheme)
+				output += team + "\n\n";
+			Console.WriteLine (output);;
 
 
             Console.ReadKey();
