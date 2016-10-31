@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-	class ResearchTeam : Team, INameAndCopy, IComparer
+	class ResearchTeam : Team, INameAndCopy, IComparer<ResearchTeam>
     {
         private string Theme;
         /*private ArrayList Publications = new ArrayList();
@@ -128,9 +128,10 @@ namespace Lab3
 
 		public int Compare(ResearchTeam x, ResearchTeam y)
 		{
-			if (x.Theme < y.Theme)
+			
+			if (x.Theme.Length< y.Theme.Length)
 					return 1;
-			if (x.Theme > y.Theme)
+			if (x.Theme.Length > y.Theme.Length)
 					return -1;
 				else return 0;
 		}

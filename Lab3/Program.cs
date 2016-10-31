@@ -55,7 +55,8 @@ namespace Lab3
            
 			ResearchTeamCollection q = new ResearchTeamCollection ();
 			q.AddDefaults ();
-			q.ToString ();
+			Console.WriteLine (q.ToString ());
+
 
 
             Console.ReadKey();

@@ -33,7 +33,7 @@ namespace Lab3
 
 		public override string ToString ()
 		{
-			string output;
+			string output = "";
 			foreach (ResearchTeam team in Teams)
 				output += team + "\n\n";
 			return output;
