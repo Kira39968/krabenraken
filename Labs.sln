@@ -9,6 +9,8 @@ Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "Script", "Script\Script.pyp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab2", "Lab2\Lab2.csproj", "{1BAFBFFA-DBEC-4CA2-A541-BF8CB5FE1118}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lab3", "Lab3\Lab3.csproj", "{3FED3A49-0A9F-48A9-A33E-BC2C6A4F71AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1BAFBFFA-DBEC-4CA2-A541-BF8CB5FE1118}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BAFBFFA-DBEC-4CA2-A541-BF8CB5FE1118}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1BAFBFFA-DBEC-4CA2-A541-BF8CB5FE1118}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FED3A49-0A9F-48A9-A33E-BC2C6A4F71AD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FED3A49-0A9F-48A9-A33E-BC2C6A4F71AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FED3A49-0A9F-48A9-A33E-BC2C6A4F71AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FED3A49-0A9F-48A9-A33E-BC2C6A4F71AD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5A7A03EC-AE49-4DE4-83C4-B8BCA4760F60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5A7A03EC-AE49-4DE4-83C4-B8BCA4760F60}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{625BAC50-EBA2-4C60-A361-69730D871B8A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
