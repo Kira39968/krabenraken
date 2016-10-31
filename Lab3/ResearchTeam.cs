@@ -67,20 +67,20 @@ namespace Lab3
             temp.ResearchTheme = ResearchTheme;
             temp.ResearchDuration = ResearchDuration;
 
-            ArrayList members = new ArrayList();
+			List<Person> members = new List<Person> ();;
             foreach (Person p in ResearchTeamMembers)
-                members.Add(p.DeepCopy());
+				members.Add(p.DeepCopy() as Person);
             temp.ResearchTeamMembers = members;
 
-            ArrayList puplications = new ArrayList();
+			List<Paper> publications = new List<Paper> ();
             foreach (Paper paper in ResearchPublications)
-                puplications.Add(paper.DeepCopy());
-            temp.ResearchPublications = puplications;
+				publications.Add(paper.DeepCopy() as Paper);
+            temp.ResearchPublications = publications;
 
             return temp;
         }
 
-        public string ArrayListToString(ArrayList al)
+        public string MembersListToString(List<Person> al)
         {
             string temp = "";
             foreach (var element in al)
@@ -88,10 +88,18 @@ namespace Lab3
             return temp;
         }
 
+		public string PapersListToString(List<Paper> al)
+		{
+			string temp = "";
+			foreach (var element in al)
+				temp +=  element.ToString();
+			return temp;
+		}
+
         public override string ToString()
         {
             return string.Format(" Research group: {0};\n Theme of reserch: {1};\n Group`s Register code: {2};\n Research duration: {3};\n Research publications: {4}; \n\r\r\r Team members: {5}",
-                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ArrayListToString(ResearchPublications), ArrayListToString(TeamMembers));
+                Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, PapersListToString(ResearchPublications), MembersListToString(TeamMembers));
         }
 
         public virtual string ToShortString()
