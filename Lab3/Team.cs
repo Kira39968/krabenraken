@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    class Team : INameAndCopy
+	class Team : INameAndCopy, IComparable
     {
         protected string name;
         protected int RegisterCode;
@@ -78,5 +78,15 @@ namespace Lab3
         {
             return name.Length * 1488 + RegisterCode;
         }
+
+		public int CompareTo(object obj) {
+			if (obj == null) return 1;
+
+			Team otherTeam = obj as Team;
+			if (otherTeam != null) 
+				return this.RegNumber.CompareTo(otherTeam.RegNumber);
+			else
+				throw new ArgumentException("Object is not a Team");
+		}
     }
 }
