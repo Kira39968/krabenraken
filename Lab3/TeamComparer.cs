@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 namespace Lab3
 {
-	public static class TeamComparer: IComparer<ResearchTeam>
+	public class TeamComparer: IComparer<ResearchTeam>
 	{
-		public int Compare(ResearchTeam x, ResearchTeam y)
+		private int Compare(ResearchTeam x, ResearchTeam y)
 		{
 			if (x.ResearchPublications.Count< y.ResearchPublications.Count)
 				return 1;

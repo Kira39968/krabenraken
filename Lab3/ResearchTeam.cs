@@ -36,10 +36,10 @@ namespace Lab3
         }
 
         public string ResearchTheme { get { return Theme; } set { Theme = value; } }
-        public List<ResearchTeam> ResearchPublications { get { return Publications; } set { Publications = value; } }
+		public List<Paper> ResearchPublications { get { return Publications; } set { Publications = value; } }
         public int ResearchRegisterCode { get { return RegisterCode; } set { RegisterCode = value; } }
         public TimeFrame ResearchDuration { get { return Duration; } set { Duration = value; } }
-		public List<ResearchTeam> ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
+		public List<Person> ResearchTeamMembers { get { return TeamMembers; } set { TeamMembers = value; } }
 
         public bool this[TimeFrame time]
         {
@@ -88,7 +88,7 @@ namespace Lab3
             return temp;
         }
 
-        public override string ToString()//о
+        public override string ToString()
         {
             return string.Format(" Research group: {0};\n Theme of reserch: {1};\n Group`s Register code: {2};\n Research duration: {3};\n Research publications: {4}; \n\r\r\r Team members: {5}",
                 Name, ResearchTheme, ResearchRegisterCode, ResearchDuration, ArrayListToString(ResearchPublications), ArrayListToString(TeamMembers));

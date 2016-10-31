@@ -1,6 +1,14 @@
-﻿<Properties StartupItem="Lab1/Lab1.csproj">
+﻿<Properties StartupItem="Lab3/Lab3.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Lab3/ResearchTeamCollection.cs">
+    <Files>
+      <File FileName="Lab3/Paper.cs" Line="1" Column="1" />
+      <File FileName="Lab3/Program.cs" Line="58" Column="18" />
+      <File FileName="Lab3/TeamComparer.cs" Line="4" Column="2" />
+      <File FileName="Lab3/ResearchTeam.cs" Line="98" Column="10" />
+      <File FileName="Lab3/ResearchTeamCollection.cs" Line="28" Column="15" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

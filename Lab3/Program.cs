@@ -10,7 +10,7 @@ namespace Lab3
     {
         static void Main(string[] args)
         {
-            Team a = new Team();
+            /*Team a = new Team();
             Team b = new Team();
 
             Console.WriteLine("Если, внезапно, ссылки на объекты равны, то вот тут >>" 
@@ -51,8 +51,11 @@ namespace Lab3
             {
                 Console.WriteLine(t.ToString() + "\n");
             }
-
+*/
            
+			ResearchTeamCollection q = new ResearchTeamCollection ();
+			q.AddDefaults ();
+			q.ToString ();
 
 
             Console.ReadKey();
