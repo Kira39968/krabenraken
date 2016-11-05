@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Lab3
 {
-    interface INameAndCopy
+    interface INameAndCopy//23
     {
         string Name { get; set; }
         object DeepCopy();
